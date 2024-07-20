@@ -10,6 +10,9 @@ const app = express(); // create an express app
 const port = process.env.PORT || 8888; // port
 const hostname = process.env.HOST_NAME || 'localhost'; // hostname
 
+//config req.body
+app.use(express.json()); // for json
+app.use(express.urlencoded({ extended: true })); // for form data
 //config template engine
 configViewEngine(app);
 //khai báo route

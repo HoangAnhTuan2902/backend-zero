@@ -10,4 +10,8 @@ const mrTuan = (req, res) => {
 	res.render('sample.ejs');
 };
 
-module.exports = { getHomePage, hello, mrTuan };
+const postCreateUser = (req, res) => {
+	console.log(req.body);
+	res.send('Create new user');
+};
+module.exports = { getHomePage, hello, mrTuan, postCreateUser };
