@@ -8,7 +8,7 @@ const mysql = require('mysql2');
 
 const app = express(); // create an express app
 const port = process.env.PORT || 8888; // port
-const hostname = process.env.HOSTNAME || 'localhost'; // hostname
+const hostname = process.env.HOST_NAME || 'localhost'; // hostname
 
 //config template engine
 configViewEngine(app);
@@ -27,7 +27,6 @@ const connection = mysql.createConnection({
 // A simple SELECT query
 connection.query('SELECT * FROM Users u', function (err, results, fields) {
 	console.log('results', results); // results contains rows returned by server
-	console.log('fields', fields); // fields contains extra meta data about results, if available
 });
 
 app.listen(port, hostname, () => {
