@@ -1,7 +1,9 @@
+const { getAllUsers } = require('../services/CRUDService.js');
 const connection = require('../config/database.js');
 
-const getHomePage = (req, res) => {
-	return res.render('home.ejs');
+const getHomePage = async (req, res) => {
+	let results = await getAllUsers();
+	return res.render('home.ejs', { listUsers: results });
 };
 
 const hello = (req, res) => {
@@ -19,7 +21,6 @@ const postCreateUser = async (req, res) => {
 		'INSERT INTO Users (email, name, city) values (?,?,?)',
 		[email, name, city],
 	);
-	console.log('result', result);
 	res.send('Create user success');
 };
 
