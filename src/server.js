@@ -15,6 +15,7 @@ app.use(express.json()); // for json
 app.use(express.urlencoded({ extended: true })); // for form data
 //config template engine
 configViewEngine(app);
+
 //khai báo route
 app.use('/', webRoutes);
 
