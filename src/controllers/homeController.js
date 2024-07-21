@@ -24,6 +24,7 @@ const postCreateUser = async (req, res) => {
 	res.send('Create user success');
 };
 const getUdatePage = (req, res) => {
+	const userId = req.params.id;
 	res.render('edit.ejs');
 };
 
