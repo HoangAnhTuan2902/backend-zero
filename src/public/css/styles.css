@@ -5,6 +5,10 @@
 
 }
 
+.d-none {
+    display: none;
+}
+
 .img {
     width: 500px;
 }
